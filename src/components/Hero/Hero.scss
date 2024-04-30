@@ -16,7 +16,10 @@
   &__title {
     font-size: VW(60);
   }
-  &-logo {
-    width: VW(1922);
+  &__logo {
+    width: VW(1796);
+    position: absolute;
+    bottom: 0%;
+    transform: translate(-50%);
   }
 }

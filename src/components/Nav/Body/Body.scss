@@ -15,7 +15,7 @@
     flex-direction: row;
     justify-content: space-between;
 
-    @include mq() {
+    @include forMobile {
       height: 95%;
       justify-content: center;
     }
@@ -26,7 +26,7 @@
     max-height: 92svh;
     transition: all 0.3s ease;
 
-    @include mq() {
+    @include forMobile {
       align-items: center;
       justify-content: center;
       text-align: center;

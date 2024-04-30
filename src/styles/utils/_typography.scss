@@ -9,7 +9,7 @@
   text-transform: uppercase;
   letter-spacing: normal;
 
-  @include mq() {
+  @include forMobile {
     font-size: 9.4vw;
   }
 }
@@ -22,7 +22,7 @@
   text-transform: uppercase;
   letter-spacing: normal;
 
-  @include mq() {
+  @include forMobile {
     font-size: 11vw;
   }
 }
@@ -35,7 +35,7 @@
   line-height: normal;
   letter-spacing: normal;
 
-  @include mq() {
+  @include forMobile {
     font-size: 6.4vw;
   }
 }
@@ -48,7 +48,7 @@
   line-height: 140%;
   letter-spacing: -0.06vw;
 
-  @include mq() {
+  @include forMobile {
     letter-spacing: -0.4vw;
     font-size: 4.7vw;
   }

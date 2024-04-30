@@ -9,28 +9,26 @@ export default function Hero() {
       <section className="hero">
         <FullWidthBg
           classSection="hero-section"
-          url="../../../public/images/hero/bachground.jpg"
+          url="/images/hero/bachground.jpg"
         >
-          <div className="hero-conrainer container">
-            <div className="hero__content">
-              <div className="hero-socials">
-                <a className="hero-social" href="#">
-                  Instagram
-                </a>
-                <a className="hero-social" href="#">
-                  Behance
-                </a>
-                <a className="hero-social" href="#">
-                  Dribbble
-                </a>
-              </div>
-              <div className="hero__title">Sites that sell emotion</div>
-              <img
-                className="hero-logo"
-                src="../../../public/images/hero/hero-logo.png"
-                alt="PROCT9"
-              />
+          <div className="hero__content">
+            <div className="hero-socials">
+              <a className="hero-social" href="#">
+                Instagram
+              </a>
+              <a className="hero-social" href="#">
+                Behance
+              </a>
+              <a className="hero-social" href="#">
+                Dribbble
+              </a>
             </div>
+            <div className="hero__title">Sites that sell emotion</div>
+            <img
+              className="hero__logo"
+              src="/images/hero/hero-logo.png"
+              alt="PROCT9"
+            />
           </div>
         </FullWidthBg>
       </section>
