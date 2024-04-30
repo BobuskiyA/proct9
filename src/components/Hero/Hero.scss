@@ -8,10 +8,27 @@
     align-items: center;
   }
 
+  &-socials {
+    display: flex;
+    gap: VW(160);
+    position: absolute;
+    top: 18%;
+  }
+
+  &-social {
+    color: $c-black;
+    opacity: 50%;
+    font-size: VW(30);
+  }
+
   &__content {
+    display: flex;
     margin: 0 auto;
-    padding: 10vw;
+    padding: 4vw;
     text-align: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
   &__title {
     font-size: VW(60);
@@ -19,7 +36,8 @@
   &__logo {
     width: VW(1796);
     position: absolute;
-    bottom: 0%;
+    bottom: 5%;
     transform: translate(-50%);
+    left: 50%;
   }
 }

@@ -1,0 +1,48 @@
+@import "/src/styles/global.scss";
+
+.footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 5vw;
+  justify-content: space-between;
+  z-index: 10;
+  padding: 0 4vw 0 4vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  color: $c-red;
+
+  @include forMobile {
+    height: 14vw;
+    justify-content: center;
+    padding: 0 6.3vw;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__list-time {
+    display: flex;
+    align-items: center;
+    gap: 10vw;
+
+    @include forMobile {
+      & :first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__swipe {
+    display: flex;
+    @include forMobile {
+      display: none;
+    }
+  }
+}

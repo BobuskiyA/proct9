@@ -31,6 +31,7 @@ export default function Hero() {
             />
           </div>
         </FullWidthBg>
+        <button className="button-popup">Start a project</button>
       </section>
     </>
   );

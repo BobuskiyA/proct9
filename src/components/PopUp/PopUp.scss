@@ -1,0 +1,24 @@
+@import "../../styles/utils//mixins";
+@import "/src/styles/global.scss";
+
+.button-popup {
+  display: block;
+  position: absolute;
+  background-color: $c-red;
+  color: $c-white;
+  width: VW(675);
+  height: VW(98);
+  font-size: VW(61);
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  right: VW(-330);
+  top: 50%;
+  filter: blur(0.2vw);
+  transition: all 1s ease-out;
+  &:hover {
+    right: VW(-300);
+    filter: blur(0);
+    width: VW(680);
+  }
+}

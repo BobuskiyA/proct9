@@ -9,6 +9,8 @@ import Home from "./pages/Home/Home";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Blog from "./pages/Blog/Blog";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
+import { Footer } from "./components/Footer/Footer";
+import PopUp from "./components/PopUp/PopUp";
 
 const queryC = new QueryClient();
 
@@ -53,6 +55,8 @@ function App() {
           <AnimatePresence mode="wait" initial={false}>
             {React.cloneElement(element, { key: location.pathname })}
           </AnimatePresence>
+          <PopUp />
+          <Footer />
         </ScrollProvider>
       </main>
     </QueryClientProvider>
