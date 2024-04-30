@@ -5,19 +5,24 @@
     "isAnchor": false
   },
   {
-    "name": "Clement",
-    "link": "#clement",
+    "name": "Advantages",
+    "link": "#advantagesment",
     "isAnchor": true,
     "page": "/"
   },
   {
-    "name": "FAQ",
-    "link": "/faq",
+    "name": "About team",
+    "link": "#about-team",
     "isAnchor": false
   },
   {
-    "name": "Medium",
-    "link": "blog",
+    "name": "Portfolio",
+    "link": "#portfolio",
+    "isAnchor": false
+  },
+  {
+    "name": "Contacts",
+    "link": "#contacts",
     "isAnchor": false
   }
 ]

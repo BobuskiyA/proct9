@@ -1,10 +1,10 @@
 @import "./mixins";
 
 %h1 {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Benzin, sans-serif;
   font-size: 2.8vw;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 800;
   line-height: 142%;
   text-transform: uppercase;
   letter-spacing: normal;
@@ -15,7 +15,7 @@
 }
 
 .big-text {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Benzin, sans-serif;
   font-size: 4.7vw;
   font-style: bold;
   line-height: 90%;
@@ -28,10 +28,10 @@
 }
 
 %h2 {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Benzin, sans-serif;
   font-size: 2vw;
   font-style: bold;
-  font-weight: normal;
+  font-weight: 800;
   line-height: normal;
   letter-spacing: normal;
 
@@ -41,13 +41,13 @@
 }
 
 %body-text {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5vw;
+  font-family: Inter, sans-serif;
+  font-size: VW(18);
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.06vw;
-  
+
   @include mq() {
     letter-spacing: -0.4vw;
     font-size: 4.7vw;
@@ -56,8 +56,6 @@
 
 %link {
   @extend %body-text;
-  font-weight: bold;
-
 }
 
 .bold {

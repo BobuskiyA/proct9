@@ -1,32 +1,39 @@
 @font-face {
-  font-family: Formula-Condensed;
-  src: url("/public/font/FormulaCondensed/FormulaCondensed-Light.otf")
-    format("opentype");
-  font-weight: lighter;
+  font-family: Benzin;
+  src: url("/public/font/Benzin/Benzin-ExtraBold.ttf") format("opentype");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Formula-Condensed;
-  src: url("/public/font/FormulaCondensed/FormulaCondensed-Bold.otf")
-    format("opentype");
-  font-weight: bold;
+  font-family: Inter;
+  src: url("/public/font/Inter/Inter-Black.ttf") format("opentype");
+  font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url("/public/font/Roboto/Roboto-Medium.ttf")
-    format("opentype");
-  font-weight: normal;
+  font-family: Inter;
+  src: url("/public/font/Inter/Inter-ExtraBold.ttf") format("opentype");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url("/public/font/Roboto/Roboto-Black.ttf")
-    format("opentype");
-  font-weight: bold;
+  font-family: Inter;
+  src: url("/public/font/Inter/Inter-Light.ttf") format("opentype");
+  font-weight: 300;
   font-style: normal;
 }
-
+@font-face {
+  font-family: Inter;
+  src: url("/public/font/Inter/Inter-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/public/font/Inter/Inter-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
