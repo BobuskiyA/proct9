@@ -28,6 +28,15 @@ function App() {
       ],
     },
     {
+      path: "/ua/",
+      element: <Home />,
+    },
+    {
+      path: "/en/",
+      element: <Home />,
+    },
+
+    {
       path: "*",
       element: <ErrorPage />,
     },

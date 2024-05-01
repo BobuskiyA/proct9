@@ -3,8 +3,11 @@ import React from "react";
 import "./Hero.scss";
 import { useIsPresent } from "framer-motion";
 import { LinkBtn } from "../Button/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="hero">
@@ -24,7 +27,7 @@ export default function Hero() {
                 Dribbble
               </LinkBtn>
             </div>
-            <div className="hero__title">Sites that sell emotion</div>
+            <div className="hero__title">{t("Sites that sell emotion")}</div>
             <img
               className="hero__logo"
               src="/images/hero/hero-logo.png"
