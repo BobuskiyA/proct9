@@ -1,0 +1,10 @@
+@import "/src/styles/global.scss";
+
+.loader {
+  width: 100vw;
+  height: 100lvh;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: $c-white;
+}

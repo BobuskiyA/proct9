@@ -3,7 +3,7 @@
 
 .button-popup {
   display: block;
-  position: absolute;
+  position: fixed;
   background-color: $c-red;
   color: $c-white;
   width: VW(675);
