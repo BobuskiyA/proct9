@@ -2,6 +2,7 @@ import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./Hero.scss";
 import { useIsPresent } from "framer-motion";
+import { LinkBtn } from "../Button/Button";
 
 export default function Hero() {
   return (
@@ -13,15 +14,15 @@ export default function Hero() {
         >
           <div className="hero__content">
             <div className="hero-socials">
-              <a className="hero-social" href="#">
+              <LinkBtn classes="/" href="#">
                 Instagram
-              </a>
-              <a className="hero-social" href="#">
+              </LinkBtn>
+              <LinkBtn classes="/" href="#">
                 Behance
-              </a>
-              <a className="hero-social" href="#">
+              </LinkBtn>
+              <LinkBtn classes="/" href="#">
                 Dribbble
-              </a>
+              </LinkBtn>
             </div>
             <div className="hero__title">Sites that sell emotion</div>
             <img
@@ -31,7 +32,6 @@ export default function Hero() {
             />
           </div>
         </FullWidthBg>
-        <button className="button-popup">Start a project</button>
       </section>
     </>
   );
