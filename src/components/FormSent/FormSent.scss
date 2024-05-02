@@ -1,0 +1,66 @@
+@import "../../styles/utils//mixins";
+@import "/src/styles/global.scss";
+@import "/src/styles/utils//typography";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: VW(593);
+  position: absolute;
+  top: 35%;
+  left: 4%;
+
+  &-text {
+  }
+  &-input {
+    background: none;
+    height: VW(118);
+    width: VW(424);
+    padding: 0 VW(8);
+    padding-left: VW(60);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: VW(11) solid $c-black;
+    border-width: 0 0 VW(11) 0;
+    font-size: VW(70);
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.1);
+      font-size: VW(70);
+    }
+    &:focus {
+      outline: none;
+      border-color: none; /* Змініть колір для фокусу за вашим вибором */
+    }
+    &.selector {
+      margin-left: VW(0);
+      width: VW(539);
+    }
+  }
+
+  &-name {
+    margin-left: VW(167);
+  }
+  &-phone {
+    margin-left: VW(114);
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+
+  &-button {
+    height: VW(303);
+    position: fixed;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #ff0000;
+    font-size: VW(101);
+    right: 3%;
+    top: 46%;
+    &:hover {
+    }
+  }
+}

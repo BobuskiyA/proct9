@@ -40,6 +40,19 @@
   }
 }
 
+%h3 {
+  font-family: Inter, sans-serif;
+  font-size: VW(149);
+  font-style: bold;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: normal;
+
+  @include forMobile {
+    font-size: 6.4vw;
+  }
+}
+
 %body-text {
   font-family: Inter, sans-serif;
   font-size: VW(18);
@@ -59,7 +72,7 @@
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 body {
@@ -72,6 +85,10 @@ h1 {
 
 h2 {
   @extend %h2;
+}
+
+h3 {
+  @extend %h3;
 }
 
 a {
