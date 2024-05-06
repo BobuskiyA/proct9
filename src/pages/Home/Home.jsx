@@ -3,7 +3,8 @@ import React from "react";
 import "./Home.scss";
 import { useIsPresent } from "framer-motion";
 import { Transition } from "@/components/Transition/Transition";
-import Hero from "@/components/Hero/Hero";
+import Hero from "@/pages/Home/Hero/Hero";
+import Advantages from "./Advantages/Advantages";
 
 export default function Home() {
   const isPresent = useIsPresent();
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <main className="home">
         <Hero />
+        <Advantages />
       </main>
 
       <Transition isPresent={isPresent} />

@@ -1,7 +1,7 @@
-@import "../../styles/utils/mixins";
+@import "../../../styles//utils/mixins";
 @import "/src/styles/global.scss";
 
-.hero {
+.advantages {
   &-section {
     display: flex;
     justify-content: center;
@@ -18,9 +18,6 @@
     font-size: VW(30);
   }
 
-  &-social {
-  }
-
   &__content {
     display: flex;
     margin: 0 auto;
@@ -32,14 +29,14 @@
   }
 
   &__title {
-    font-size: VW(60);
+    text-transform: uppercase;
+    max-width: VW(850);
+    & span {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
-
-  &__logo {
-    width: VW(1796);
-    position: absolute;
-    top: 76%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &-slider {
+    width: 85%;
   }
 }

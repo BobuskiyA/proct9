@@ -29,7 +29,7 @@
 
 %h2 {
   font-family: Benzin, sans-serif;
-  font-size: 2vw;
+  font-size: VW(72);
   font-style: bold;
   font-weight: 800;
   line-height: normal;
@@ -50,6 +50,20 @@
 
   @include forMobile {
     font-size: 6.4vw;
+  }
+}
+
+%h4 {
+  font-family: Inter, sans-serif;
+  font-size: VW(20);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.06vw;
+
+  @include forMobile {
+    letter-spacing: -0.4vw;
+    font-size: 2.7vw;
   }
 }
 
@@ -89,6 +103,9 @@ h2 {
 
 h3 {
   @extend %h3;
+}
+h4 {
+  @extend %h4;
 }
 
 a {

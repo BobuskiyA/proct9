@@ -2,7 +2,7 @@ import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./Hero.scss";
 import { useIsPresent } from "framer-motion";
-import { LinkBtn } from "../Button/Button";
+import { LinkBtn } from "../../../components/Button/Button";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {

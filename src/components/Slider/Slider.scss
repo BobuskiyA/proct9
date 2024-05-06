@@ -1,0 +1,87 @@
+@import "../../styles//utils/mixins";
+@import "/src/styles/global.scss";
+
+.slide {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__title {
+    margin-bottom: VW(38);
+  }
+
+  &__subtitle {
+    font-size: VW(30);
+  }
+  &__arrows {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  &__arrow {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  &__arrow--prev {
+  }
+  &__arrow--next {
+  }
+}
+
+.custom {
+  &-slider {
+    display: flex;
+    position: relative;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: VW(5);
+    position: absolute;
+    top: 100%;
+    left: 36%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: VW(58);
+    height: VW(58);
+    border: VW(1) solid;
+    border-radius: 50%;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    &.prev,
+    .next {
+      & img {
+      }
+    }
+    &.next {
+      & img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
