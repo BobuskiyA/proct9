@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "./Slider.scss";
-
+import { useTranslation } from "react-i18next";
 // Default theme
 import "@splidejs/react-splide/css";
 
@@ -14,6 +14,8 @@ import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
 
 export const Slider = ({ slides }) => {
+  const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const splideRef = useRef(null);
 
@@ -53,8 +55,8 @@ export const Slider = ({ slides }) => {
         {slides.map((slide, index) => (
           <SplideSlide key={index}>
             <div className="slide__content">
-              <h4 className="slide__title">{slide.number}</h4>
-              <p className="slide__subtitle">{slide.subTitle}</p>
+              <h4 className="slide__title">{t(slide.number)}</h4>
+              <p className="slide__subtitle">{t(slide.subTitle)}</p>
             </div>
           </SplideSlide>
         ))}

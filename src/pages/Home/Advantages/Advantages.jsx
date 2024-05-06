@@ -19,7 +19,7 @@ export default function Advantages() {
           <div className="advantages__content">
             <h2 className="advantages__title">
               {t("We're proud of ourselves")}
-              <span>{t(" for that")}</span>
+              <span>{t("for that")}</span>
             </h2>
             <div className="advantages-slider">
               <Slider slides={slides} />

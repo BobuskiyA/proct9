@@ -31,12 +31,14 @@
   &__title {
     text-transform: uppercase;
     max-width: VW(850);
+    padding: 0px 4vw;
     & span {
       display: flex;
       justify-content: flex-end;
     }
   }
   &-slider {
+    padding: 0 1.2vw;
     width: 85%;
   }
 }
