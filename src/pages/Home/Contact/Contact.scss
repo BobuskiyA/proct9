@@ -1,0 +1,45 @@
+@import "../../../styles//utils/mixins";
+@import "/src/styles/global.scss";
+
+.contact {
+  &-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &-socials {
+    display: flex;
+    flex-direction: column;
+    gap: VW(1);
+    color: $c-black;
+  }
+
+  &__content {
+    display: flex;
+    padding: 4vw;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &-social {
+    text-decoration: underline;
+    font-size: VW(155);
+    font-weight: 800;
+
+    &:hover {
+      filter: blur(0.4vw);
+    }
+
+    &.instagram {
+    }
+    &.behance {
+      margin-left: VW(418);
+    }
+    &.dribbble {
+      margin-left: VW(284);
+    }
+  }
+}

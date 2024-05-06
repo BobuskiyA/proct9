@@ -13,7 +13,8 @@
   {
     "name": "About team",
     "link": "#about-team",
-    "isAnchor": false
+    "isAnchor": true,
+    "page": "/"
   },
   {
     "name": "Portfolio",

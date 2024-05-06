@@ -41,5 +41,8 @@
     top: 76%;
     left: 50%;
     transform: translate(-50%, -50%);
+    &:hover {
+      filter: blur(0.4vw);
+    }
   }
 }

@@ -1,11 +1,8 @@
 import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./Advantages.scss";
-import { useIsPresent } from "framer-motion";
-import { LinkBtn } from "../../../components/Button/Button";
 import { useTranslation } from "react-i18next";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import slides from "./slider.json";
 import { Slider } from "@/components/Slider/Slider";
 

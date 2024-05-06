@@ -1,0 +1,32 @@
+@import "../../../styles//utils/mixins";
+@import "/src/styles/global.scss";
+
+.about-team {
+  &-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    margin: 0 auto;
+    padding: 4vw;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 10%;
+  }
+
+  &__title {
+    line-height: 88%;
+    margin-bottom: VW(44);
+    font-size: VW(160);
+    max-width: VW(1000);
+  }
+  &__text {
+    letter-spacing: 0.2rem;
+    width: 60%;
+  }
+}

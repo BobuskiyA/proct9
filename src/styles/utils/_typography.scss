@@ -35,6 +35,10 @@
   line-height: normal;
   letter-spacing: normal;
 
+  &:hover {
+    filter: blur(0.4vw);
+  }
+
   @include forMobile {
     font-size: 6.4vw;
   }
