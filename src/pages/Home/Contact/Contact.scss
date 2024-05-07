@@ -22,12 +22,20 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    @include forMobile {
+      position: absolute;
+      left: 7%;
+      bottom: 15%;
+    }
   }
 
   &-social {
     text-decoration: underline;
     font-size: VW(155);
     font-weight: 800;
+    @include forMobile {
+      font-size: 13.33333vw;
+    }
 
     &:hover {
       filter: blur(0.4vw);
@@ -40,6 +48,9 @@
     }
     &.dribbble {
       margin-left: VW(284);
+      @include forMobile {
+        margin-left: 0;
+      }
     }
   }
 }

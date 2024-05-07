@@ -17,6 +17,9 @@
     align-items: center;
     position: relative;
     left: 10%;
+    @include forMobile {
+      left: 0;
+    }
   }
 
   &__title {
@@ -24,9 +27,16 @@
     margin-bottom: VW(44);
     font-size: VW(160);
     max-width: VW(1000);
+    @include forMobile {
+      margin-bottom: 6vw;
+      max-width: 100%;
+    }
   }
   &__text {
     letter-spacing: 0.2rem;
     width: 60%;
+    @include forMobile {
+      width: 100%;
+    }
   }
 }

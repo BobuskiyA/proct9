@@ -84,9 +84,27 @@
   top: 50%;
   filter: blur(0.2vw);
   transition: all 1s ease-out;
+  z-index: 30;
+
+  @include forMobile {
+    filter: blur(0);
+    top: 100%;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    top: unset;
+    right: 0;
+    height: 17.6vw;
+    font-size: 9vw;
+  }
+
   &:hover {
     right: VW(-300);
     filter: blur(0);
     width: VW(680);
+    @include forMobile {
+      right: 0;
+      width: 100%;
+    }
   }
 }

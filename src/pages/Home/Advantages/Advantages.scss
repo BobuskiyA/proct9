@@ -32,6 +32,15 @@
     text-transform: uppercase;
     max-width: VW(850);
     padding: 0px 4vw;
+    @include forMobile {
+      display: flex;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 8vw;
+    }
+
     & span {
       display: flex;
       justify-content: flex-end;

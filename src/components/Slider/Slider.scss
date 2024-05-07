@@ -9,6 +9,9 @@
   }
   &__title {
     margin-bottom: VW(38);
+    @include forMobile {
+      font-size: 4vw;
+    }
   }
 
   &__subtitle {
@@ -16,30 +19,10 @@
     width: VW(675);
     text-align: left;
     letter-spacing: -0.06vw;
-  }
-  &__arrows {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-  }
-
-  &__arrow {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #333;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 5px;
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.8);
+    @include forMobile {
+      font-size: 4vw;
+      width: 50%;
     }
-  }
-  &__arrow--prev {
-  }
-  &__arrow--next {
   }
 }
 
@@ -56,12 +39,16 @@
 
   &__arrows {
     display: flex;
-    gap: VW(5);
+    gap: 1vw;
     position: absolute;
     top: 100%;
     left: 36%;
     transform: translateX(-50%);
     z-index: 10;
+    @include forMobile {
+      gap: 2vw;
+      left: 50%;
+    }
   }
 
   &__arrow {
@@ -69,10 +56,15 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: VW(58);
-    height: VW(58);
+    width: VW(84);
+    height: VW(84);
     border: VW(1) solid;
     border-radius: 50%;
+    @include forMobile {
+      width: 15.467vw;
+      height: 15.467vw;
+    }
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.8);
     }
