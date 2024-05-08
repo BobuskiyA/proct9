@@ -43,7 +43,7 @@ const CustomDropdown = ({ formData, setFormData }) => {
         className="form-input selector"
       />
       <div className="dropdown-arrow">
-        <img src="/public/images/popup/polygon.svg" alt="" />
+        <img src="/images/popup/polygon.svg" alt="" />
       </div>
       {isOpen && (
         <ul className="dropdown-list">

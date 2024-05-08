@@ -14,7 +14,7 @@ export default function Advantages() {
       <section className="advantages">
         <FullWidthBg
           classSection="advantages-section"
-          url="/public/images/advantages/advantages.jpg"
+          url="/images/advantages/advantages.jpg"
         >
           <div className="advantages__content">
             <h2 className="advantages__title">

@@ -83,7 +83,7 @@ const FormSent = () => {
         {error && <p className="error-message">{error}</p>}
         <button className="form-button" type="submit">
           {t("Send")}
-          <img src="/public/images/popup/union.svg" alt=">" />
+          <img src="/images/popup/union.svg" alt=">" />
         </button>
       </form>
     </>

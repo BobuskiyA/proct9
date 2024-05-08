@@ -11,7 +11,7 @@ export default function AboutTeam() {
       <section id="about-team" className="about-team">
         <FullWidthBg
           classSection="about-team-section"
-          url="/public/images/about-team/about-team.jpg"
+          url="/images/about-team/about-team.jpg"
         >
           <div className="about-team__content">
             <h2 className="about-team__title">{t("About our team")}</h2>

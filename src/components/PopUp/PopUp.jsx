@@ -34,7 +34,7 @@ export default function PopUp() {
             </div>
             <FormSent />
             <button className="modal-close" onClick={toggleModal}>
-              <img src="/public/images/popup/close.svg" alt="Close" />
+              <img src="/images/popup/close.svg" alt="Close" />
             </button>
           </div>
         </div>

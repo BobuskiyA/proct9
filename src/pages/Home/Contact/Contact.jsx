@@ -11,7 +11,7 @@ export default function Contact() {
       <section className="contact">
         <FullWidthBg
           classSection="contact-section"
-          url="/public/images/contact/contact.jpg"
+          url="/images/contact/contact.jpg"
         >
           <div className="contact__content">
             <div className="contact-socials">

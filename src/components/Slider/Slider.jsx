@@ -70,7 +70,7 @@ export const Slider = ({ slides }) => {
           onClick={prevSlide}
           disabled={currentIndex === 0}
         >
-          <img src="/public/images/advantages/arrow.svg" alt="Prev" />
+          <img src="/images/advantages/arrow.svg" alt="Prev" />
         </button>
         <button
           className={`custom__arrow next ${
@@ -79,7 +79,7 @@ export const Slider = ({ slides }) => {
           onClick={nextSlide}
           disabled={currentIndex === slides.length - 1}
         >
-          <img src="/public/images/advantages/arrow.svg" alt="Next" />
+          <img src="/images/advantages/arrow.svg" alt="Next" />
         </button>
       </div>
     </div>
