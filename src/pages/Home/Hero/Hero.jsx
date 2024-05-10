@@ -11,10 +11,12 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
-        <FullWidthBg
-          classSection="hero-section"
-          url="/images/hero/bachground.jpg"
-        >
+        <FullWidthBg classSection="hero-section hero-background">
+          <img
+            className="hero-image"
+            src="/public/images/hero/image 21.jpg"
+            alt=""
+          />
           <div className="hero__content">
             <div className="hero-socials">
               <LinkBtn classes="/" href="#">

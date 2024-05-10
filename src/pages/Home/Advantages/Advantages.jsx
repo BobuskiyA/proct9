@@ -13,7 +13,7 @@ export default function Advantages() {
     <>
       <section className="advantages">
         <FullWidthBg
-          classSection="advantages-section"
+          classSection="advantages-section advantages-background"
           url="/images/advantages/advantages.jpg"
         >
           <div className="advantages__content">
