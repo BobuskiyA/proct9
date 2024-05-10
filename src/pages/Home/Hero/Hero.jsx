@@ -12,11 +12,7 @@ export default function Hero() {
     <>
       <section className="hero">
         <FullWidthBg classSection="hero-section hero-background">
-          <img
-            className="hero-image"
-            src="/public/images/hero/image 21.jpg"
-            alt=""
-          />
+          <img className="hero-image" src="/images/hero/image 21.jpg" alt="" />
           <div className="hero__content">
             <div className="hero-socials">
               <LinkBtn classes="/" href="#">
