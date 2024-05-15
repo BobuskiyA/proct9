@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import slides from "./slider.json";
 import { Slider } from "@/components/Slider/Slider";
+import PopUp from "@/components/PopUp/PopUp";
 
 export default function Advantages() {
   const { t } = useTranslation();
@@ -12,10 +13,12 @@ export default function Advantages() {
   return (
     <>
       <section className="advantages">
-        <FullWidthBg
-          classSection="advantages-section advantages-background"
-          url="/images/advantages/advantages.jpg"
-        >
+        <FullWidthBg classSection="advantages-section advantages-background">
+          <img
+            className="advantages-image"
+            src="/images/advantages/background.jpg"
+            alt=""
+          />
           <div className="advantages__content">
             <h2 className="advantages__title">
               {t("We're proud of ourselves")}

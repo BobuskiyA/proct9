@@ -9,10 +9,12 @@ export default function AboutTeam() {
   return (
     <>
       <section id="about-team" className="about-team">
-        <FullWidthBg
-          classSection="about-team-section"
-          url="/images/about-team/about-team.jpg"
-        >
+        <FullWidthBg classSection="about-team-section" alt="">
+          <img
+            className="about-team-image"
+            src="/images/about-team/background.jpg"
+            alt="background"
+          />
           <div className="about-team__content">
             <h2 className="about-team__title">{t("About our team")}</h2>
             <div className="about-team__text">

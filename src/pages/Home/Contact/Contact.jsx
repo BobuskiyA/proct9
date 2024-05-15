@@ -9,10 +9,13 @@ export default function Contact() {
   return (
     <>
       <section className="contact">
-        <FullWidthBg
-          classSection="contact-section"
-          url="/images/contact/contact.jpg"
-        >
+        <FullWidthBg classSection="contact-section">
+          <img
+            className="contact-image"
+            src="/images/contact/background.jpg"
+            alt="background"
+          />
+
           <div className="contact__content">
             <div className="contact-socials">
               <a className="contact-social instagram" href="#">
@@ -21,8 +24,8 @@ export default function Contact() {
               <a className="contact-social behance" href="#">
                 Behance
               </a>
-              <a className="contact-social dribbble" href="#">
-                Dribbble
+              <a className="contact-social Telegram" href="#">
+                Telegram
               </a>
             </div>
           </div>

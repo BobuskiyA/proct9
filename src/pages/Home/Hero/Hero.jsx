@@ -12,7 +12,11 @@ export default function Hero() {
     <>
       <section className="hero">
         <FullWidthBg classSection="hero-section hero-background">
-          <img className="hero-image" src="/images/hero/image 21.jpg" alt="" />
+          <img
+            className="hero-image"
+            src="/images/hero/background.jpg"
+            alt="background"
+          />
           <div className="hero__content">
             <div className="hero-socials">
               <LinkBtn classes="/" href="#">
@@ -22,7 +26,7 @@ export default function Hero() {
                 Behance
               </LinkBtn>
               <LinkBtn classes="/" href="#">
-                Dribbble
+                Telegram
               </LinkBtn>
             </div>
             <div className="hero__title">{t("Sites that sell emotion")}</div>
@@ -33,6 +37,7 @@ export default function Hero() {
             />
           </div>
         </FullWidthBg>
+        <img className="hero-line" src="/public/images/line.svg" alt="" />
       </section>
     </>
   );

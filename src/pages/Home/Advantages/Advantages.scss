@@ -6,16 +6,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f2f2f2;
   }
 
-  &-socials {
-    display: flex;
-    gap: VW(160);
+  &-background {
+    object-position: 60% 60%;
+  }
+
+  &-image {
     position: absolute;
-    top: 18%;
-    color: $c-black;
-    opacity: 50%;
-    font-size: VW(30);
+    width: VW(829.21);
+    height: VW(1470.07);
+    right: 5%;
+    transform: rotate(14.52deg);
+    z-index: 1;
+
+    @include forMobile {
+      width: 89.9933vw;
+      height: 73.6906vh;
+      top: -20%;
+      right: 0;
+    }
   }
 
   &__content {
@@ -26,6 +37,10 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 2;
+    @include forMobile {
+      margin-top: 55vw;
+    }
   }
 
   &__title {
