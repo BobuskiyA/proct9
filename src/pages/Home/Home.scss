@@ -1,19 +1,13 @@
 @import "../../styles/utils//mixins";
 
 .home {
-  &-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  &--paralax {
+    height: 200lvh;
+    position: relative;
 
-  &__content {
-    width: 70%;
-    margin: 0 auto;
-    padding: 10vw;
-    text-align: center;
-    &-title {
-      font-size: VW(60);
+    .hero {
+      position: sticky;
+      top: 0;
     }
   }
 }

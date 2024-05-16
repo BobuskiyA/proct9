@@ -1,3 +1,12 @@
+export const anim = (variants) => {
+  return {
+    initial: "initial",
+    animate: "animate",
+    exit: "exit",
+    variants,
+  };
+};
+
 export const Menu = {
   menuOpen: {
     initial: {
@@ -54,3 +63,27 @@ export const blogAnim = {
     },
   },
 };
+
+export const PopUpAnim = {
+  body: {
+    initial: {
+      scale: 0.95,
+      filter: "blur(1vw)",
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      filter: "blur(0vw)",
+      opacity: 1,
+      transition: {
+        duration: .7,
+        ease: [.75,.18,.31,.86]
+      }
+    },
+    exit: {
+      scale: 1.01,
+      filter: "blur(1vw)",
+      opacity: 0,
+    }
+  }
+}

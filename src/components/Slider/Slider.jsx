@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "./Slider.scss";
 import { useTranslation } from "react-i18next";
@@ -44,22 +44,31 @@ export const Slider = ({ slides }) => {
       <Splide
         ref={splideRef}
         options={{
-          type: "fade",
+          type: "loop",
           rewind: true,
-          perPage: 1,
+          rewindByDrag: true,
+          slideFocus: true,
+            keyboard: true,
+          width: "50%",
+          gap: '2%',
+          rewind: true,
+          perPage: 2,
           pagination: false,
           arrows: false,
         }}
+        hasTrack={false}
         onMoved={(splide) => setCurrentIndex(splide.index)}
       >
-        {slides.map((slide, index) => (
-          <SplideSlide key={index}>
-            <div className="slide__content">
-              <h4 className="slide__title">{t(slide.number)}</h4>
-              <p className="slide__subtitle">{t(slide.subTitle)}</p>
-            </div>
-          </SplideSlide>
-        ))}
+        <SplideTrack>
+          {slides.map((slide, index) => (
+            <SplideSlide key={index}>
+              <div className="slide__content">
+                <h4 className="slide__title">{t(slide.number)}</h4>
+                <p className="slide__subtitle">{t(slide.subTitle)}</p>
+              </div>
+            </SplideSlide>
+          ))}
+        </SplideTrack>
       </Splide>
 
       <div className="custom__arrows">

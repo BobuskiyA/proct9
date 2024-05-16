@@ -6,7 +6,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: VW(675);
   }
+
   &__title {
     margin-bottom: VW(38);
     @include forMobile {
@@ -16,9 +18,10 @@
 
   &__subtitle {
     font-size: VW(30);
-    width: VW(675);
     text-align: left;
     letter-spacing: -0.06vw;
+    text-wrap: balance;
+
     @include forMobile {
       font-size: 4vw;
       width: 50%;
@@ -78,6 +81,18 @@
       & img {
         transform: rotate(180deg);
       }
+    }
+  }
+}
+
+.splide {
+  &__slide {
+    width: auto !important;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+
+    &.is-active{
+      opacity: 1
     }
   }
 }
