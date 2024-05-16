@@ -17,9 +17,8 @@
   @include forMobile {
     background-color: transparent;
     height: 14vw;
-    justify-content: space-between;
-    padding: 0 6.3vw;
-    padding: 6.3vw 6.3vw 0 6.3vw;
+    padding: 4vw 5vw;
+    width: 90vw;
   }
 
   &__wrapper {

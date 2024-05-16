@@ -55,6 +55,7 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 4;
     @include forMobile {
       align-items: center;
       position: relative;
@@ -90,10 +91,13 @@
   }
   &-line {
     position: absolute;
-    top: 50%;
+    top: 63%;
     z-index: 5;
+    width: 100%;
 
     @include forMobile {
+      height: 10%;
+      top: 90%;
     }
   }
 }
