@@ -20,11 +20,10 @@
     font-size: VW(30);
     text-align: left;
     letter-spacing: -0.06vw;
-    text-wrap: balance;
 
     @include forMobile {
       font-size: 4vw;
-      width: 50%;
+      width: 100%;
     }
   }
 }
@@ -90,9 +89,20 @@
     width: auto !important;
     opacity: 0.4;
     transition: opacity 0.4s ease;
+    background: linear-gradient(92deg, #000000 -104%, #f2f2f2 50.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 5vw;
 
-    &.is-active{
-      opacity: 1
+    @include forMobile {
+      -webkit-text-fill-color: unset;
+      opacity: 0.18;
+    }
+
+    &.is-active {
+      opacity: 1;
+      -webkit-text-fill-color: unset;
     }
   }
 }
