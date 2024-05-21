@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import "./CustomDropdown.scss";
 
-const CustomDropdown = ({ formData, setFormData }) => {
+const CustomDropdown = ({ value, onChange, hasError }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -11,10 +10,8 @@ const CustomDropdown = ({ formData, setFormData }) => {
   };
 
   const handleItemClick = (item) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      category: item,
-    }));
+    onChange(item);
+    setIsOpen(false);
   };
 
   const handleOutsideClick = (e) => {
@@ -37,10 +34,10 @@ const CustomDropdown = ({ formData, setFormData }) => {
       <input
         type="text"
         placeholder="Landing"
-        value={formData.category}
+        value={value}
         onClick={toggleDropdown}
         readOnly
-        className="form-input selector"
+        className={`form-input selector ${hasError ? "input-error" : ""}`}
       />
       <div className="dropdown-arrow">
         <img src="/images/popup/polygon.svg" alt="" />

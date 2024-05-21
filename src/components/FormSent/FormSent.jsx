@@ -1,92 +1,117 @@
-import React, { useState } from "react";
+import React from "react";
 import "./FormSent.scss";
 import sendMessage from "../../requests/sendMessage";
 import formatFormData from "../../helpers/formatFormData";
-import { LinkBtn } from "../Button/Button";
-import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import { useTranslation } from "react-i18next";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import CustomDropdown from "../CustomDropdown/CustomDropdown";
+import PhoneNumberInput from "../PhoneNumberInput/PhoneNumberInput";
+
+const schema = yup.object().shape({
+  description: yup.string().trim().required("Please enter a description."),
+  phoneNumber: yup
+    .string()
+    .matches(/^\d+$/, "Please enter a valid phone number.")
+    .required("Please enter a phone number."),
+  category: yup.string().required("Please select a category."),
+});
 
 const FormSent = () => {
   const { t } = useTranslation();
 
-  const [formData, setFormData] = useState({
-    description: "",
-    phoneNumber: "",
-    category: "",
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      description: "",
+      phoneNumber: "",
+      category: "",
+    },
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const [error, setError] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.description.trim()) {
-      setError("Please enter something before submitting");
-      return;
-    }
-    const formattedData = formatFormData(formData);
+  const onSubmit = async (data) => {
+    const formattedData = formatFormData(data);
     try {
       await sendMessage(formattedData);
       console.log("Sent successfully:", formattedData);
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        description: "",
-        phoneNumber: "",
-        category: "",
-      }));
-      setError(null);
+      reset();
     } catch (error) {
       console.error("Error sending:", error);
-      setError("An error occurred while sending. Try again.");
+      // Add error handling logic if needed
     }
   };
 
   return (
-    <>
-      <form className="form" onSubmit={handleSubmit}>
-        <label className="form-text">
-          <CustomDropdown formData={formData} setFormData={setFormData} />
-        </label>
+    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <label className="form-text">
+        <Controller
+          name="category"
+          control={control}
+          render={({ field }) => (
+            <CustomDropdown
+              value={field.value}
+              onChange={(value) => field.onChange(value)}
+              hasError={!!errors.category}
+            />
+          )}
+        />
+        {errors.category && (
+          <p className="error-message">{errors.category.message}</p>
+        )}
+      </label>
 
-        <label className="form-text">
-          <input
-            className="form-input form-name"
-            type="text"
-            id="name"
-            placeholder="Name"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label className="form-text">
-          <input
-            className="form-input form-phone"
-            type="tel"
-            id="phoneNumber"
-            placeholder="Phone"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            required
-          />
-        </label>
-        {error && <p className="error-message">{error}</p>}
-        <button className="form-button" type="submit">
-          {t("Send")}
-          <img src="/images/popup/union.svg" alt=">" />
-        </button>
-      </form>
-    </>
+      <label className="form-text">
+        <Controller
+          name="description"
+          control={control}
+          render={({ field }) => (
+            <input
+              className={`form-input form-name ${
+                errors.description ? "input-error" : ""
+              }`}
+              type="text"
+              id="description"
+              placeholder="Name"
+              {...field}
+            />
+          )}
+        />
+        {errors.description && (
+          <p className="error-message">{errors.description.message}</p>
+        )}
+      </label>
+
+      <label className="form-text">
+        <Controller
+          name="phoneNumber"
+          control={control}
+          render={({ field }) => (
+            <PhoneNumberInput
+              className={`form-input form-phone ${
+                errors.phoneNumber ? "input-error" : ""
+              }`}
+              value={field.value}
+              onChange={(value) => field.onChange(value)}
+              onBlur={field.onBlur}
+            />
+          )}
+        />
+        {errors.phoneNumber && (
+          <p className="error-message">{errors.phoneNumber.message}</p>
+        )}
+      </label>
+
+      <button className="form-button" type="submit">
+        {t("Send")}
+        <img src="/images/popup/union.svg" alt=">" />
+      </button>
+    </form>
   );
 };
 
