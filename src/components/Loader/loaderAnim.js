@@ -9,8 +9,10 @@ export const presenceAnim = ( logo ) => {
     filter: "blur(0vw)",
   });
 
+  const isWideScreen = window.innerWidth / window.innerHeight >= 15 / 9;
+
   tl.to(logo, {
-    yPercent: -50,
+    yPercent: isWideScreen ? -50 : -10,
     scale: 1,
     duration: 1,
     delay: .5,

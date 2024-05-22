@@ -7,4 +7,10 @@
   inset: 0;
   z-index: 100;
   background-color: $c-white;
+
+  &__logo {
+    @include forMobile {
+      top: 80%;
+    }
+  }
 }

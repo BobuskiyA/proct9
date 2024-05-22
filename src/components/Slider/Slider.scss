@@ -7,6 +7,10 @@
     flex-direction: column;
     align-items: flex-start;
     width: VW(675);
+
+    @include forMobile {
+      width: 60vw;
+    }
   }
 
   &__title {
@@ -85,6 +89,10 @@
 }
 
 .splide {
+  @include forMobile {
+    width: 80vw !important;
+  }
+
   &__slide {
     width: auto !important;
     opacity: 0.4;

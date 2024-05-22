@@ -15,9 +15,11 @@ export const Loader = ({ setLoaderEnded }) => {
         onComplete: () => setLoaderEnded(true)
       });
 
+  const isWideScreen = window.innerWidth / window.innerHeight >= 15 / 9;
+
       gsap.set(logoRef.current, {
         scale: .2,
-        yPercent: -100,
+        yPercent: isWideScreen ? -100 : -300,
         opacity: 0,
         filter: "blur(1vw)",
       })
@@ -30,7 +32,7 @@ export const Loader = ({ setLoaderEnded }) => {
   return (
     <div className="loader" ref={loaderRef}>
       <img
-        className="hero__logo"
+        className="hero__logo loader__logo"
         src="/images/hero/hero-logo.png"
         alt="PROCT9"
         ref={logoRef}

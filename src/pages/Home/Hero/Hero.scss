@@ -7,6 +7,8 @@
     justify-content: center;
     align-items: center;
     background-color: #f2f2f2;
+    height: 100vh;
+    width: 100vw;
   }
 
   &-background {
@@ -78,15 +80,9 @@
     top: 76%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include forMobile {
-      position: relative;
-      top: 0;
-      left: 0;
-      transform: none;
-    }
 
-    &:hover {
-      filter: blur(0.4vw);
+    @include forMobile {
+      top: 109%;
     }
   }
   &-line {

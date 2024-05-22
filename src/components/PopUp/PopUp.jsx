@@ -21,23 +21,6 @@ export default function PopUp() {
     document.body.classList.remove("active-modal");
   }
 
-  useEffect(() => {
-    if (modal) {
-      const handleScroll = () => {
-        setModal(false);
-      };
-  
-      const timeoutId = setTimeout(() => {
-        window.addEventListener("scroll", handleScroll);
-      }, 1000); // Затримка в мілісекундах
-  
-      return () => {
-        clearTimeout(timeoutId);
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [modal]);
-
   return (
     <>
       <button onClick={toggleModal} className="button-popup">

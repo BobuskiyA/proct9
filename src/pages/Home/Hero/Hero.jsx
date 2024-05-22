@@ -1,7 +1,5 @@
-import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./Hero.scss";
-import { useIsPresent } from "framer-motion";
 import { LinkBtn } from "../../../components/Button/Button";
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +9,7 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
-        <FullWidthBg classSection="hero-section hero-background">
+        <div className="hero-section hero-background">
           <img
             className="hero-image"
             src="/images/hero/background.jpg"
@@ -36,7 +34,7 @@ export default function Hero() {
               alt="PROCT9"
             />
           </div>
-        </FullWidthBg>
+        </div>
         <img className="hero-line" src="/public/images/line.svg" alt="" />
       </section>
     </>

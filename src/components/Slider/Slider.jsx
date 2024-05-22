@@ -49,7 +49,7 @@ export const Slider = ({ slides }) => {
           rewindByDrag: true,
           slideFocus: true,
           keyboard: true,
-          width: "60%",
+          // width: "60%",
           gap: "10%",
           rewind: true,
           perPage: 2,

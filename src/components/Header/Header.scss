@@ -5,10 +5,9 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 5vw;
   justify-content: space-between;
   z-index: 10;
-  padding: 3vw 4vw 1vw 4vw;
+  padding: 1vw 4vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -33,13 +32,14 @@
   }
 
   &__logo {
-    height: 90%;
+    height: VW(47);
+    width: VW(62);
     position: relative;
     z-index: 100;
-
+    
     @include forMobile {
-      width: 14.7vw;
-      height: 13.5vw;
+      height: VW(47, $mobile);
+      width: VW(62, $mobile);
     }
   }
 
@@ -49,7 +49,6 @@
     gap: 10vw;
     color: $c-red;
     font-size: 1.2vw;
-    padding: 0.5vw 0.7vw;
     position: relative;
     z-index: 1;
 
