@@ -1,7 +1,7 @@
 @import "/src/styles/global.scss";
 
 .header {
-  background-color: #f2f2f2;
+  //background-color: #f2f2f2;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@
     width: VW(62);
     position: relative;
     z-index: 100;
-    
+
     @include forMobile {
       height: VW(47, $mobile);
       width: VW(62, $mobile);

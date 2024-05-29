@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   description: yup.string().trim().required("Please enter a description."),
   phoneNumber: yup
     .string()
-    .matches(/^\d+$/, "Please enter a valid phone number.")
+    .matches(/^\+\d+$/, "Please enter a valid phone number.")
     .required("Please enter a phone number."),
   category: yup.string().required("Please select a category."),
 });
@@ -30,7 +30,7 @@ const FormSent = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       description: "",
-      phoneNumber: "",
+      phoneNumber: "+380",
       category: "",
     },
   });
