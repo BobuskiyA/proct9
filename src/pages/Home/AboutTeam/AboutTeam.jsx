@@ -1,4 +1,3 @@
-import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./About-team.scss";
 import { useTranslation } from "react-i18next";
@@ -9,10 +8,10 @@ export default function AboutTeam() {
   return (
     <>
       <section id="about-team" className="about-team">
-        <FullWidthBg classSection="about-team-section" alt="">
+        <div className="about-team-section">
           <img
             className="about-team-image"
-            src="/images/about-team/background.jpg"
+            src="/images/about-team/image-21.png"
             alt="background"
           />
           <div className="about-team__content">
@@ -23,7 +22,7 @@ export default function AboutTeam() {
               )}
             </div>
           </div>
-        </FullWidthBg>
+        </div>
       </section>
     </>
   );

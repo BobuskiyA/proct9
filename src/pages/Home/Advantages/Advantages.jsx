@@ -16,7 +16,7 @@ export default function Advantages() {
         <FullWidthBg classSection="advantages-section advantages-background">
           <img
             className="advantages-image"
-            src="/images/advantages/background.jpg"
+            src="/images/advantages/image-20.png"
             alt=""
           />
           <div className="advantages__content">
@@ -29,7 +29,7 @@ export default function Advantages() {
             </div>
           </div>
         </FullWidthBg>
-        <img className="advantages-line" src="/public/images/line.svg" alt="" />
+        <img className="advantages-line" src="/images/line.svg" alt="" />
       </section>
     </>
   );

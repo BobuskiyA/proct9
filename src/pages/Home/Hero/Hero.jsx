@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="hero-section hero-background">
           <img
             className="hero-image"
-            src="/images/hero/background.jpg"
+            src="/images/hero/image-23.png"
             alt="background"
           />
           <div className="hero__content">
@@ -35,7 +35,6 @@ export default function Hero() {
             />
           </div>
         </div>
-        <img className="hero-line" src="/public/images/line.svg" alt="" />
       </section>
     </>
   );

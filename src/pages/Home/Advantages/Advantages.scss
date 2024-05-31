@@ -69,7 +69,7 @@
   &-line {
     position: absolute;
     top: 81%;
-    z-index: 5;
+    z-index: 1;
     width: 100%;
 
     @include forMobile {

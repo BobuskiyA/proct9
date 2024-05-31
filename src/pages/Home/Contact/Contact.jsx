@@ -12,7 +12,7 @@ export default function Contact() {
         <FullWidthBg classSection="contact-section">
           <img
             className="contact-image"
-            src="/images/contact/background.jpg"
+            src="/images/contact/image-22.png"
             alt="background"
           />
 

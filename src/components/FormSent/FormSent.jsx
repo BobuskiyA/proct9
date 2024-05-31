@@ -37,13 +37,15 @@ const FormSent = () => {
 
   const onSubmit = async (data) => {
     const formattedData = formatFormData(data);
+    console.log("Submitting data:", data);
+    console.log("Formatted data:", formattedData);
+
     try {
       await sendMessage(formattedData);
       console.log("Sent successfully:", formattedData);
       reset();
     } catch (error) {
       console.error("Error sending:", error);
-      // Add error handling logic if needed
     }
   };
 
