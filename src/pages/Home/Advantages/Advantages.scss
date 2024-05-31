@@ -15,9 +15,10 @@
 
   &-image {
     position: absolute;
-    width: VW(829.21);
-    height: VW(1470.07);
-    right: 5%;
+    width: 34.959375vw;
+    height: 59.460417vw;
+    right: 10%;
+    top: -10%;
     transform: rotate(14.52deg);
     z-index: 1;
 
@@ -67,8 +68,9 @@
   }
 
   &-line {
+    display: none;
     position: absolute;
-    top: 81%;
+    top: 82%;
     z-index: 1;
     width: 100%;
 

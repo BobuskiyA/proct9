@@ -28,8 +28,8 @@ export default function Advantages() {
               <Slider slides={slides} />
             </div>
           </div>
+          <img className="advantages-line" src="/images/line.svg" alt="" />
         </FullWidthBg>
-        <img className="advantages-line" src="/images/line.svg" alt="" />
       </section>
     </>
   );
