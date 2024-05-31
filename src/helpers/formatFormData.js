@@ -1,10 +1,8 @@
 function formatFormData(formData) {
   const labels = {
-    firstName: "Ім'я: ",
-    lastName: "Прізвище: ",
-    phoneNumber: "Номер телефону: +",
-    email: "Email: ",
     description: "Питання: ",
+    phoneNumber: "Номер телефону: ",
+    category: "Категорія: ",
   };
 
   let formattedData = "";
