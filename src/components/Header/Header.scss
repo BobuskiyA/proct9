@@ -1,6 +1,8 @@
 @import "/src/styles/global.scss";
 
 .header {
+  backdrop-filter: blur(0.1vw);
+  background-color: #f2f2f229;
   //background-color: #f2f2f2;
   align-items: center;
   display: flex;
