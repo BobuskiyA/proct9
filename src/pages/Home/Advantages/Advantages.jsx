@@ -29,6 +29,7 @@ export default function Advantages() {
             </div>
           </div>
         </FullWidthBg>
+        <img className="advantages-line" src="/public/images/line.svg" alt="" />
       </section>
     </>
   );

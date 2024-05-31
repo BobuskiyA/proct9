@@ -65,4 +65,16 @@
     padding: 0 3.2vw;
     width: 85%;
   }
+
+  &-line {
+    position: absolute;
+    top: 81%;
+    z-index: 5;
+    width: 100%;
+
+    @include forMobile {
+      height: 10%;
+      top: 90%;
+    }
+  }
 }
