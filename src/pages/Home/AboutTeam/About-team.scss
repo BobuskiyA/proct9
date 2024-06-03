@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     background-color: #f2f2f2;
+    position: relative;
   }
 
   &-background {
@@ -26,7 +27,7 @@
       width: 66.93vw;
       height: 43.35vh;
 
-      top: 0;
+      top: -10%;
       object-position: 60% 60%;
     }
   }
