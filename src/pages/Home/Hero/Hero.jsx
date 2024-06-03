@@ -17,13 +17,16 @@ export default function Hero() {
           />
           <div className="hero__content">
             <div className="hero-socials">
-              <LinkBtn classes="/" href="#">
+              <LinkBtn
+                classes="/"
+                href="https://www.instagram.com/wd_kupnevskiy_?igsh=NzU2OHp6Mmw4Z3hq"
+              >
                 Instagram
               </LinkBtn>
-              <LinkBtn classes="/" href="#">
+              <LinkBtn classes="/" href="https://www.behance.net/kupnevskiy">
                 Behance
               </LinkBtn>
-              <LinkBtn classes="/" href="#">
+              <LinkBtn classes="/" href="http://t.me/kupnevskiydesign">
                 Telegram
               </LinkBtn>
             </div>
