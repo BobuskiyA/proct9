@@ -35,9 +35,15 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer__wrapper">
         <ul className="footer__list-time">
-          <li className="footer-text">{times.Kiev} / Kiev</li>
-          <li className="footer-text">{times.London} / London</li>
-          <li className="footer-text">{times.Washington} / Washington</li>
+          <li className="footer-text">
+            {times.Kiev} / {t("Kiev")}
+          </li>
+          <li className="footer-text">
+            {times.London} / {t("London")}
+          </li>
+          <li className="footer-text">
+            {times.Washington} / {t("Washington")}
+          </li>
         </ul>
       </div>
       <div className="footer__swipe">2024</div>
