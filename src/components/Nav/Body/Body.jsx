@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Menu } from '@/helpers/anim'
-import linksList from '@/data/links.json'
+import { Menu } from "@/helpers/anim";
+import linksList from "@/data/links.json";
 import "./Body.scss";
 import AnchorLink from "@/components/AnchorLink/AnchorLink";
 
