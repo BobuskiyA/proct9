@@ -12,6 +12,9 @@
   "dependencies": {
     "@gsap/react": "^2.1.0",
     "@hookform/resolvers": "^3.4.0",
+    "@mantine/core": "^7.10.1",
+    "@mantine/form": "^7.10.1",
+    "@mantine/hooks": "^7.10.1",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.12.3",
     "@splidejs/react-splide": "^0.7.12",

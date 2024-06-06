@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import FormSent from "../FormSent/FormSent";
 import { AnimatePresence, motion } from "framer-motion";
 import { anim, PopUpAnim } from "@/helpers/anim";
+import { MantineProvider } from "@mantine/core";
 
 export default function PopUp() {
   const { t } = useTranslation();
@@ -35,7 +36,10 @@ export default function PopUp() {
                 <h3 className="modal-title bold">{t("Leave a")}</h3>
                 <h3 className="modal-title bold">{t("request")}</h3>
               </div>
-              <FormSent />
+              <MantineProvider>
+                <FormSent />
+              </MantineProvider>
+
               <button className="modal-close" onClick={toggleModal}>
                 <img src="/images/popup/close.svg" alt="Close" />
               </button>

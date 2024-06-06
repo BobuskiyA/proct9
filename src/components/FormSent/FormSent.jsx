@@ -1,119 +1,70 @@
-import React from "react";
+import { useState } from "react";
+import { useForm } from "@mantine/form";
+import { sendMessage } from "../../requests/telegram";
+import { Box, Button, Group, TextInput } from "@mantine/core";
 import "./FormSent.scss";
-import sendMessage from "../../requests/sendMessage";
-import formatFormData from "../../helpers/formatFormData";
-import { useTranslation } from "react-i18next";
-import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import PhoneNumberInput from "../PhoneNumberInput/PhoneNumberInput";
+import CustomDropdown from "../CustomDropdown/CustomDropdown";
+import { useTranslation } from "react-i18next";
 
-const schema = yup.object().shape({
-  description: yup.string().trim().required("Please enter a description."),
-  phoneNumber: yup
-    .string()
-    .matches(/^\+\d+$/, "Please enter a valid phone number.")
-    .required("Please enter a phone number."),
-  category: yup.string().required("Please select a category."),
-});
-
-const FormSent = () => {
+export const FormSent = () => {
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-    defaultValues: {
-      description: "",
-      phoneNumber: "+380",
-      category: "",
+  const form = useForm({
+    initialValues: {
+      name: "",
+      select: "",
+      phone: "",
+    },
+
+    validate: {
+      name: (value) => (value.length < 2 ? "" : null),
+      select: (value) => (value ? null : ""),
+      phone: (value) => (value ? null : ""),
     },
   });
 
-  const onSubmit = async (data) => {
-    const formattedData = formatFormData(data);
-    console.log("Submitting data:", data);
-    console.log("Formatted data:", formattedData);
-
+  const handleSubmit = async ({ name, select, phone }) => {
     try {
-      await sendMessage(formattedData);
-      console.log("Sent successfully:", formattedData);
-      reset();
-    } catch (error) {
-      console.error("Error sending:", error);
+      setIsLoading(true);
+
+      const message = `Імʼя: ${name} \n Вибір: ${select} \n Телефон: +${phone}`;
+      await sendMessage(message);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
-      <label className="form-text">
-        <Controller
-          name="category"
-          control={control}
-          render={({ field }) => (
-            <CustomDropdown
-              value={field.value}
-              onChange={(value) => field.onChange(value)}
-              hasError={!!errors.category}
-            />
-          )}
+    <Box>
+      <form className="form" onSubmit={form.onSubmit(handleSubmit)}>
+        <CustomDropdown
+          value={form.values.select}
+          onChange={(value) => form.setFieldValue("select", value)}
+          hasError={!!form.errors.select}
         />
-        {errors.category && (
-          <p className="error-message">{errors.category.message}</p>
-        )}
-      </label>
-
-      <label className="form-text">
-        <Controller
-          name="description"
-          control={control}
-          render={({ field }) => (
-            <input
-              className={`form-input form-name ${
-                errors.description ? "input-error" : ""
-              }`}
-              type="text"
-              id="description"
-              placeholder="Name"
-              {...field}
-            />
-          )}
+        <TextInput
+          placeholder="Name"
+          {...form.getInputProps("name")}
+          className="form-input form-name"
         />
-        {errors.description && (
-          <p className="error-message">{errors.description.message}</p>
-        )}
-      </label>
-
-      <label className="form-text">
-        <Controller
-          name="phoneNumber"
-          control={control}
-          render={({ field }) => (
-            <PhoneNumberInput
-              className={`form-input form-phone ${
-                errors.phoneNumber ? "input-error" : ""
-              }`}
-              value={field.value}
-              onChange={(value) => field.onChange(value)}
-              onBlur={field.onBlur}
-            />
-          )}
+        <PhoneNumberInput
+          value={form.values.phone}
+          onChange={(value) => form.setFieldValue("phone", value)}
+          onBlur={() => form.validateField("phone")}
+          className={`phone-input ${form.errors.phone ? "input-error" : ""}`}
         />
-        {errors.phoneNumber && (
-          <p className="error-message">{errors.phoneNumber.message}</p>
-        )}
-      </label>
-
-      <button className="form-button" type="submit">
-        {t("Send")}
-        <img src="/images/popup/union.svg" alt=">" />
-      </button>
-    </form>
+        <Group>
+          <Button className="form-button" loading={isLoading} type="submit">
+            {t("Send")}
+            <img src="/images/popup/union.svg" alt=">" />
+          </Button>
+        </Group>
+      </form>
+    </Box>
   );
 };
 

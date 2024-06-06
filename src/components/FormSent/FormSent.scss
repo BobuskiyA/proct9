@@ -13,56 +13,8 @@
     position: relative;
     width: 100%;
     align-items: center;
-    top: 20vw;
+    top: 10vw;
     left: 0;
-  }
-
-  &-text {
-  }
-  &-input {
-    background: none;
-    height: VW(118);
-    width: VW(424);
-    padding: 0 VW(8);
-    padding-left: VW(60);
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border-bottom: VW(11) solid $c-black;
-    border-width: 0 0 VW(11) 0;
-    font-size: VW(60);
-    &.input-error {
-      border-bottom: VW(11) solid $c-red;
-    }
-    @include forMobile {
-      padding-left: 0;
-      height: 14vw;
-      width: 68vw;
-    }
-
-    &::placeholder {
-      display: flex;
-      color: rgba(0, 0, 0, 0.1);
-      font-size: VW(70);
-      @include forMobile {
-        text-align: center;
-        font-size: 8vw;
-      }
-    }
-    &:focus {
-      outline: none;
-      border-color: none;
-    }
-    &.selector {
-      margin-left: VW(0);
-      width: VW(539);
-      &.input-error {
-        border-bottom: VW(11) solid $c-red;
-      }
-      @include forMobile {
-        width: 68vw;
-      }
-    }
   }
 
   &-name {
@@ -103,17 +55,64 @@
     @include forMobile {
       height: 30vw;
       width: 100%;
-      position: relative;
+      position: absolute;
       display: flex;
       flex-direction: row;
       font-size: 10vw;
       align-items: flex-end;
       justify-content: center;
-      top: 30%;
+      top: 130%;
       gap: 6vw;
     }
 
     &:hover {
+    }
+  }
+}
+
+input {
+  background: none;
+  height: VW(118);
+  width: VW(424);
+  padding: 0 VW(8);
+  padding-left: VW(60);
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  box-sizing: border-box;
+  border-bottom: VW(11) solid $c-black;
+  border-width: 0 0 VW(11) 0;
+  font-size: VW(60);
+  &.input-error {
+    border-bottom: VW(11) solid $c-red;
+  }
+  @include forMobile {
+    border-bottom: 1.3vw solid $c-black;
+    padding-left: 0;
+    height: 14vw;
+    width: 68vw;
+  }
+
+  &::placeholder {
+    display: flex;
+    color: rgba(0, 0, 0, 0.1);
+    font-size: VW(70);
+    @include forMobile {
+      text-align: center;
+      font-size: 8vw;
+    }
+  }
+  &:focus {
+    outline: none;
+    border-color: none;
+  }
+  &.selector {
+    margin-left: VW(0);
+    width: VW(539);
+    &.input-error {
+      border-bottom: VW(11) solid $c-red;
+    }
+    @include forMobile {
+      width: 68vw;
     }
   }
 }
