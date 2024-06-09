@@ -19,9 +19,9 @@ export const FormSent = () => {
     },
 
     validate: {
-      name: (value) => (value.length < 2 ? "" : null),
-      select: (value) => (value ? null : ""),
-      phone: (value) => (value ? null : ""),
+      name: (value) => (value.length < 2 ? "Name too short" : null),
+      select: (value) => (value ? null : "Please select an option"),
+      phone: (value) => (value ? null : "Please enter a phone number"),
     },
   });
 

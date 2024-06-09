@@ -11,6 +11,7 @@ const CustomDropdown = ({ value, onChange, hasError }) => {
 
   const handleItemClick = (item) => {
     onChange(item);
+    setIsOpen(false);
   };
 
   const handleOutsideClick = (e) => {
