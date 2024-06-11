@@ -48,8 +48,13 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
   };
 
   const handleInputChange = (e) => {
-    const val = e.target.value;
-    onChange(val);
+    // Ensure only digits are entered
+    const inputValue = e.target.value.replace(/\D/g, "");
+    // Limit to max 15 digits
+    const maxLength = 15;
+    const trimmedValue = inputValue.slice(0, maxLength);
+    inputRef.current.value = trimmedValue;
+    onChange(trimmedValue);
   };
 
   const handleFocus = () => {
@@ -83,6 +88,7 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
         onBlur={handleBlur}
         placeholder="Phone"
         className={className}
+        maxLength={15} // Maximum length of 15 characters
       />
     </div>
   );

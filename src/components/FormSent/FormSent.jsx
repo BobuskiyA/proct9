@@ -33,7 +33,12 @@ export const FormSent = () => {
     validate: {
       name: (value) => (value.length < 2 ? "Name too short" : null),
       select: (value) => (value ? null : "Please select an option"),
-      phone: (value) => (value ? null : "Please enter a phone number"),
+      phone: (value) => {
+        if (!value) return "Please enter a phone number";
+        if (value.replace(/\D/g, "").length < 12)
+          return "Phone number must have at least 12 digits";
+        return null;
+      },
     },
   });
 
