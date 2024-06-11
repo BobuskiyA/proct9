@@ -39,7 +39,7 @@ const CustomDropdown = ({ value, onChange, hasError }) => {
         readOnly
         className={`form-input selector ${hasError ? "input-error" : ""}`}
       />
-      <div className="dropdown-arrow">
+      <div className="dropdown-arrow" onClick={toggleDropdown}>
         <img src="/images/popup/polygon.svg" alt="" />
       </div>
       {isOpen && (

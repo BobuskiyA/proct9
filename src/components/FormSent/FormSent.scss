@@ -82,18 +82,24 @@ input {
   border-bottom: VW(11) solid $c-black;
   border-width: 0 0 VW(11) 0;
   font-size: VW(60);
+
   &.input-error {
     border-bottom: VW(11) solid $c-red;
+    @include forMobile {
+      border-bottom: 1.3vw solid $c-red;
+    }
   }
   @include forMobile {
     border-bottom: 1.3vw solid $c-black;
     padding-left: 0;
     height: 14vw;
     width: 68vw;
+    font-size: 6vw;
   }
 
   &::placeholder {
     display: flex;
+    align-items: center;
     color: rgba(0, 0, 0, 0.1);
     font-size: VW(70);
     @include forMobile {
@@ -109,7 +115,7 @@ input {
     margin-left: VW(0);
     width: VW(539);
     &.input-error {
-      border-bottom: VW(11) solid $c-red;
+      border-bottom: 1.3vw solid $c-red;
     }
     @include forMobile {
       width: 68vw;
