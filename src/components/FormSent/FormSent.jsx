@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
 import { sendMessage } from "../../requests/telegram";
-import { Box, Button, Group, TextInput } from "@mantine/core";
+import {
+  Box,
+  Button,
+  Group,
+  TextInput as MantineTextInput,
+} from "@mantine/core";
 import "./FormSent.scss";
 import PhoneNumberInput from "../PhoneNumberInput/PhoneNumberInput";
 import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import { useTranslation } from "react-i18next";
+
+const TextInput = ({ error, className, ...props }) => (
+  <MantineTextInput
+    {...props}
+    classNames={{ input: error ? `input-error ${className}` : className }}
+  />
+);
 
 export const FormSent = () => {
   const { t } = useTranslation();
@@ -48,6 +60,7 @@ export const FormSent = () => {
         />
         <TextInput
           placeholder="Name"
+          error={form.errors.name}
           {...form.getInputProps("name")}
           className="form-input form-name"
         />

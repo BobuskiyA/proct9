@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import intlTelInput from "intl-tel-input";
 import "intl-tel-input/build/css/intlTelInput.css";
 import "./PhoneNumberInput.scss";
@@ -9,6 +9,7 @@ const utilsScriptUrl =
 const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
   const inputRef = useRef(null);
   const iti = useRef(null);
+  const [hasFocus, setHasFocus] = useState(false);
 
   useEffect(() => {
     iti.current = intlTelInput(inputRef.current, {
@@ -17,14 +18,6 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
     });
 
     iti.current.promise.then(() => {
-      if (inputRef.current) {
-        const initialNumber = `+${
-          iti.current.getSelectedCountryData().dialCode || "380"
-        }`;
-        inputRef.current.value = initialNumber;
-        onChange(initialNumber);
-      }
-
       inputRef.current.addEventListener("countrychange", handleCountryChange);
     });
 
@@ -47,15 +40,10 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
 
   const handleCountryChange = () => {
     const countryData = iti.current.getSelectedCountryData();
-    const currentInputValue = inputRef.current.value;
-
     const countryCode = `+${countryData.dialCode || ""}`;
-    if (!currentInputValue.startsWith(countryCode)) {
-      const newNumber = `${countryCode} ${currentInputValue
-        .replace(/^\+?\d*/, "")
-        .trim()}`;
-      inputRef.current.value = newNumber;
-      onChange(newNumber);
+    if (hasFocus && !inputRef.current.value.startsWith(countryCode)) {
+      inputRef.current.value = countryCode;
+      onChange(countryCode);
     }
   };
 
@@ -64,7 +52,18 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
     onChange(val);
   };
 
+  const handleFocus = () => {
+    setHasFocus(true);
+    const countryData = iti.current.getSelectedCountryData();
+    const countryCode = `+${countryData.dialCode || ""}`;
+    if (!inputRef.current.value.startsWith(countryCode)) {
+      inputRef.current.value = countryCode;
+      onChange(countryCode);
+    }
+  };
+
   const handleBlur = () => {
+    setHasFocus(false);
     if (iti.current.isValidNumber()) {
       const fullNumber = iti.current.getNumber();
       onChange(fullNumber);
@@ -80,6 +79,7 @@ const PhoneNumberInput = ({ value, onChange, onBlur, className }) => {
         type="tel"
         ref={inputRef}
         onChange={handleInputChange}
+        onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder="Phone"
         className={className}

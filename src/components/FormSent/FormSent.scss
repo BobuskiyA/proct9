@@ -115,4 +115,9 @@ input {
       width: 68vw;
     }
   }
+  &.phone-input {
+    padding-right: var(--iti-input-padding);
+    padding-left: var(--iti-selected-country-arrow-padding);
+    margin-left: 0;
+  }
 }
