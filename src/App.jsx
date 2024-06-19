@@ -15,7 +15,8 @@ import classNames from "classnames";
 const queryC = new QueryClient();
 
 function App() {
-  const [loaderEnded, setLoaderEnded] = useState(false);
+  const [loaderEnded, setLoaderEnded] = useState(true);
+  // const [loaderEnded, setLoaderEnded] = useState(false);
 
   const element = useRoutes([
     {
@@ -47,6 +48,7 @@ function App() {
   return (
     <QueryClientProvider client={queryC}>
       <main
+        // className="app"
         className={classNames("app", {
           "app--loading": !loaderEnded,
         })}

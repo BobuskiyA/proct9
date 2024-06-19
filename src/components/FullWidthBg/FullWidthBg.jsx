@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { FC, ReactNode, forwardRef, ForwardedRef } from "react";
 import { useInView } from "react-intersection-observer";
 import "./FullWidthBg.scss";
@@ -13,9 +12,9 @@ const FullWidthBg = (
     type = "image",
     ...otherProps
   }) => {
-    const classForBg = classNames("full_width_image__item", customClass);
+    const classForBg = ("full_width_image__item " + customClass);
 
-    const classForSection = classNames("full_width_image", classSection);
+    const classForSection = ("full_width_image " + classSection);
 
     const { ref, inView } = useInView({
       triggerOnce: true,

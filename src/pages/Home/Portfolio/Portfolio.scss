@@ -1,0 +1,79 @@
+@import "/src/styles/global.scss";
+
+.portfolio {
+  height: 100vh;
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  &__title {
+    rotate: 270deg;
+    font-size: VW(84);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -150%);
+  }
+
+  &__slider {
+    margin-left: VW(240);
+  }
+
+  &__content {
+    display: flex;
+    width: VW(1166) !important;
+    gap: VW(50);
+    margin-left: VW(40);
+  }
+
+  &__name {
+    font-size: VW(30);
+    width: 60%;
+  }
+
+  &__image {
+    width: VW(890);
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 1vw;
+    position: absolute;
+    top: 90%;
+    left: 52%;
+    transform: translateX(-50%);
+    z-index: 10;
+    @include forMobile {
+      gap: 2vw;
+      left: 80%;
+      top: 70%;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: VW(84);
+    height: VW(84);
+    border: VW(1) solid;
+    border-radius: 50%;
+    background-color: $c-white;
+    transition: background-color .3s ease;
+
+    @include forMobile {
+      width: 15.467vw;
+      height: 15.467vw;
+    }
+
+    &--prev {
+      rotate: 180deg;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}

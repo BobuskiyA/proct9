@@ -1,116 +1,119 @@
 @import "../../styles//utils/mixins";
 @import "/src/styles/global.scss";
 
-.slide {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: VW(675);
-
-    @include forMobile {
-      width: 60vw;
-    }
-  }
-
-  &__title {
-    margin-bottom: VW(38);
-    @include forMobile {
-      font-size: 4vw;
-    }
-  }
-
-  &__subtitle {
-    font-size: VW(30);
-    text-align: left;
-    letter-spacing: -0.06vw;
-
-    @include forMobile {
-      font-size: 4vw;
-      width: 100%;
-    }
-  }
-}
-
-.custom {
-  &-slider {
-    display: flex;
-    position: relative;
-  }
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  &__arrows {
-    display: flex;
-    gap: 1vw;
-    position: absolute;
-    top: 100%;
-    left: 36%;
-    transform: translateX(-50%);
-    z-index: 10;
-    @include forMobile {
-      gap: 2vw;
-      left: 80%;
-      top: 70%;
-    }
-  }
-
-  &__arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: VW(84);
-    height: VW(84);
-    border: VW(1) solid;
-    border-radius: 50%;
-    @include forMobile {
-      width: 15.467vw;
-      height: 15.467vw;
-    }
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-    &.prev,
-    .next {
-      & img {
+.advantages {
+  .slide {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: VW(675);
+  
+      @include forMobile {
+        width: 60vw;
       }
     }
-    &.next {
-      & img {
-        transform: rotate(180deg);
+  
+    &__title {
+      margin-bottom: VW(38);
+      @include forMobile {
+        font-size: 4vw;
+      }
+    }
+  
+    &__subtitle {
+      font-size: VW(30);
+      text-align: left;
+      letter-spacing: -0.06vw;
+  
+      @include forMobile {
+        font-size: 4vw;
+        width: 100%;
       }
     }
   }
-}
-
-.splide {
-  @include forMobile {
-    width: 80vw !important;
+  
+  .custom {
+    &-slider {
+      display: flex;
+      position: relative;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    &__arrows {
+      display: flex;
+      gap: 1vw;
+      position: absolute;
+      top: 100%;
+      left: 36%;
+      transform: translateX(-50%);
+      z-index: 10;
+      @include forMobile {
+        gap: 2vw;
+        left: 80%;
+        top: 70%;
+      }
+    }
+  
+    &__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: VW(84);
+      height: VW(84);
+      border: VW(1) solid;
+      border-radius: 50%;
+      transition: background-color .3s ease;
+  
+      @include forMobile {
+        width: 15.467vw;
+        height: 15.467vw;
+      }
+  
+      &--prev {
+        rotate: 180deg;
+      }
+  
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
   }
-
-  &__slide {
-    width: auto !important;
-    opacity: 0.4;
-    transition: opacity 0.4s ease;
-    background: linear-gradient(92deg, #000000 -104%, #f2f2f2 50.67%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-left: 5vw;
-
+  
+  .splide {
     @include forMobile {
-      -webkit-text-fill-color: unset;
-      opacity: 0.18;
+      width: 80vw !important;
+    }
+  
+    &__track {
+      width: 78vw !important;
+      position: relative;
     }
 
-    &.is-active {
-      opacity: 1;
-      -webkit-text-fill-color: unset;
+    &__slide {
+      width: auto !important;
+      opacity: 0.4;
+      transition: opacity 0.4s ease;
+      background: linear-gradient(92deg, #000000 -104%, #f2f2f2 50.67%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-left: 5vw;
+  
+      @include forMobile {
+        -webkit-text-fill-color: unset;
+        opacity: 0.18;
+      }
+  
+      &.is-active {
+        opacity: 1;
+        -webkit-text-fill-color: unset;
+      }
     }
   }
 }

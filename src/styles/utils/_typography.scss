@@ -93,6 +93,10 @@
   font-weight: 900;
 }
 
+.upperCase {
+  text-transform: uppercase
+}
+
 body {
   @extend %body-text;
 }
