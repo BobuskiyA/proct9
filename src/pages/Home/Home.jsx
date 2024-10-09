@@ -10,7 +10,6 @@ import Contact from "./Contact/Contact";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Portfolio from "./Portfolio/Portfolio";
 
 export default function Home() {
   const isPresent = useIsPresent();
@@ -40,7 +39,6 @@ export default function Home() {
           <Hero />
           <Advantages />
         </div>
-        <Portfolio />
         <AboutTeam />
         <Contact />
       </main>
